@@ -1,0 +1,172 @@
+146  cat >HomeAnimals
+  147  cat HomeAnimals
+  148  cat > PackAnimals
+  149  cat PackAnimals
+  150  mkdir animals
+  151  mv HomeAnimals animals/HomeAnimals
+  152  mv PackAnimals animals/PackAnimals
+  153  cd animals/
+  154  ll
+  155  wget https://dev.mysql.com/downloads/repo/apt/mysql-apt-config_0.8.26-1_all.deb
+  156  wget https://dev.mysql.com/get/mysql-apt-config_0.8.26-1_all.deb
+  157  user@ubuntu-docker:~/animals$ wget https://dev.mysql.com/get/mysql-apt-config_0.8.26-1_all.deb
+  158  --2023-09-28 16:20:02--  https://dev.mysql.com/get/mysql-apt-config_0.8.26-1_all.deb
+  159  Resolving dev.mysql.com (dev.mysql.com)... 184.51.238.43, 2a02:2d8:3:9a9::2e31, 2a02:2d8:3:9a5::2e31
+  160  Connecting to dev.mysql.com (dev.mysql.com)|184.51.238.43|:443... connected.
+  161  HTTP request sent, awaiting response... 302 Moved Temporarily
+  162  Location: https://repo.mysql.com//mysql-apt-config_0.8.26-1_all.deb [following]
+  163  --2023-09-28 16:20:03--  https://repo.mysql.com//mysql-apt-config_0.8.26-1_all.deb
+  164  Resolving repo.mysql.com (repo.mysql.com)... 184.51.230.241, 2a02:26f0:5200:1b5::1d68, 2a02:26f0:5200:18f::1d68
+  165  Connecting to repo.mysql.com (repo.mysql.com)|184.51.230.241|:443... connected.
+  166  HTTP request sent, awaiting response... 200 OK
+  167  Length: 18088 (18K) [application/x-debian-package]
+  168  Saving to: ‘mysql-apt-config_0.8.26-1_all.deb’
+  169  mysql-apt-config_0.8.26-1_all 100%[==============================================>]  17.66K  --.-KB/s    in 0.001s
+  170  2023-09-28 16:20:04 (34.5 MB/s) - ‘mysql-apt-config_0.8.26-1_all.deb’ saved [18088/18088]
+  171  user@ubuntu-docker:~/animals$
+  172  sudo dpkg -i mysql-apt-config_0.8.12-1_all.deb
+  173  ll
+  174  sudo dpkg -i mysql-apt-config_0.8.26-1_all.deb
+  175  Mysql
+  176  shutdown -h now
+  177  shutdown -h
+  178  sudo shutdown -h
+  179  sudo apt update
+  180  user@ubuntu-docker:~$ sudo apt update
+  181  [sudo] password for user:
+  182  Hit:1 https://mirror.yandex.ru/ubuntu focal InRelease
+  183  Hit:2 https://download.docker.com/linux/ubuntu focal InRelease
+  184  Get:3 https://mirror.yandex.ru/ubuntu focal-updates InRelease [114 kB]
+  185  Get:4 https://mirror.yandex.ru/ubuntu focal-backports InRelease [108 kB]
+  186  Get:5 https://mirror.yandex.ru/ubuntu focal-security InRelease [114 kB]
+  187  Get:6 https://mirror.yandex.ru/ubuntu focal-updates/main amd64 Packages [2,853 k                                     B]
+  188  Get:7 http://repo.mysql.com/apt/ubuntu focal InRelease [12.8 kB]
+  189  Get:8 http://repo.mysql.com/apt/ubuntu focal/mysql-8.0 Sources [966 B]
+  190  Get:9 http://repo.mysql.com/apt/ubuntu focal/mysql-apt-config amd64 Packages [56                                     5 B]
+  191  Get:10 http://repo.mysql.com/apt/ubuntu focal/mysql-8.0 amd64 Packages [10.7 kB]
+  192  Get:11 http://repo.mysql.com/apt/ubuntu focal/mysql-tools amd64 Packages [3,848                                      B]
+  193  Get:12 https://mirror.yandex.ru/ubuntu focal-updates/main Translation-en [469 kB                                     ]
+  194  Get:13 https://mirror.yandex.ru/ubuntu focal-updates/restricted amd64 Packages [                                     2,330 kB]
+  195  Get:14 https://mirror.yandex.ru/ubuntu focal-updates/universe amd64 Packages [1,117 kB]
+  196  Get:15 https://mirror.yandex.ru/ubuntu focal-updates/multiverse amd64 Packages [25.9 kB]
+  197  Get:16 https://mirror.yandex.ru/ubuntu focal-security/restricted amd64 c-n-f Metadata [572 B]
+  198  Get:17 https://mirror.yandex.ru/ubuntu focal-security/multiverse amd64 c-n-f Metadata [548 B]
+  199  Fetched 7,160 kB in 23s (313 kB/s)
+  200  Reading package lists... Done
+  201  Building dependency tree
+  202  Reading state information... Done
+  203  6 packages can be upgraded. Run 'apt list --upgradable' to see them.
+  204  user@ubuntu-docker:~$
+  205  sudo apt install mysql-server
+  206  user@ubuntu-docker:~$ sudo apt install mysql-server
+  207  Reading package lists... Done
+  208  Building dependency tree
+  209  Reading state information... Done
+  210  The following packages were automatically installed and are no longer required:
+  211  Use 'sudo apt autoremove' to remove them.
+  212  The following additional packages will be installed:
+  213  The following NEW packages will be installed:
+  214  0 upgraded, 12 newly installed, 0 to remove and 6 not upgraded.
+  215  Need to get 43.0 MB of archives.
+  216  After this operation, 365 MB of additional disk space will be used.
+  217  Do you want to continue? [Y/n] y
+  218  Get:1 https://mirror.yandex.ru/ubuntu focal/main amd64 libmecab2 amd64 0.996-10build1 [233 kB]
+  219  Get:2 http://repo.mysql.com/apt/ubuntu focal/mysql-8.0 amd64 mysql-common amd64 8.0.34-1ubuntu20.04 [68.4 kB]
+  220  Get:3 http://repo.mysql.com/apt/ubuntu focal/mysql-8.0 amd64 mysql-community-client-plugins amd64 8.0.34-1ubuntu20.04 [1,305 kB]
+  221  Get:4 http://repo.mysql.com/apt/ubuntu focal/mysql-8.0 amd64 mysql-community-client-core amd64 8.0.34-1ubuntu20.04 [1,889 kB]
+  222  Get:5 http://repo.mysql.com/apt/ubuntu focal/mysql-8.0 amd64 mysql-community-client amd64 8.0.34-1ubuntu20.04 [3,315 kB]
+  223  Get:6 http://repo.mysql.com/apt/ubuntu focal/mysql-8.0 amd64 mysql-client amd64 8.0.34-1ubuntu20.04 [67.1 kB]
+  224  Get:7 http://repo.mysql.com/apt/ubuntu focal/mysql-8.0 amd64 mysql-community-server-core amd64 8.0.34-1ubuntu20.04 [29.2 MB]
+  225  Get:8 https://mirror.yandex.ru/ubuntu focal/main amd64 mecab-utils amd64 0.996-10build1 [4,912 B]
+  226  Get:9 https://mirror.yandex.ru/ubuntu focal/main amd64 mecab-ipadic all 2.7.0-20070801+main-2.1 [6,714 kB]
+  227  Get:10 http://repo.mysql.com/apt/ubuntu focal/mysql-8.0 amd64 mysql-community-server amd64 8.0.34-1ubuntu20.04 [78.2 kB]
+  228  Get:11 http://repo.mysql.com/apt/ubuntu focal/mysql-8.0 amd64 mysql-server amd64 8.0.34-1ubuntu20.04 [67.1 kB]
+  229  Get:12 https://mirror.yandex.ru/ubuntu focal/main amd64 mecab-ipadic-utf8 all 2.7.0-20070801+main-2.1 [4,380 B]
+  230  Fetched 43.0 MB in 16s (2,666 kB/s)
+  231  Preconfiguring packages ...
+  232  Selecting previously unselected package mysql-common.
+  233  (Reading database ... 89585 files and directories currently installed.)
+  234  Preparing to unpack .../00-mysql-common_8.0.34-1ubuntu20.04_amd64.deb ...
+  235  Unpacking mysql-common (8.0.34-1ubuntu20.04) ...
+  236  Selecting previously unselected package mysql-community-client-plugins.
+  237  Preparing to unpack .../01-mysql-community-client-plugins_8.0.34-1ubuntu20.04_amd64.deb ...
+  238  Unpacking mysql-community-client-plugins (8.0.34-1ubuntu20.04) ...
+  239  Selecting previously unselected package mysql-community-client-core.
+  240  Preparing to unpack .../02-mysql-community-client-core_8.0.34-1ubuntu20.04_amd64.deb ...
+  241  Unpacking mysql-community-client-core (8.0.34-1ubuntu20.04) ...
+  242  Selecting previously unselected package mysql-community-client.
+  243  Preparing to unpack .../03-mysql-community-client_8.0.34-1ubuntu20.04_amd64.deb ...
+  244  Unpacking mysql-community-client (8.0.34-1ubuntu20.04) ...
+  245  Selecting previously unselected package mysql-client.
+  246  Preparing to unpack .../04-mysql-client_8.0.34-1ubuntu20.04_amd64.deb ...
+  247  Unpacking mysql-client (8.0.34-1ubuntu20.04) ...
+  248  Selecting previously unselected package libmecab2:amd64.
+  249  Preparing to unpack .../05-libmecab2_0.996-10build1_amd64.deb ...
+  250  Unpacking libmecab2:amd64 (0.996-10build1) ...
+  251  Selecting previously unselected package mysql-community-server-core.
+  252  Preparing to unpack .../06-mysql-community-server-core_8.0.34-1ubuntu20.04_amd64.deb ...
+  253  Unpacking mysql-community-server-core (8.0.34-1ubuntu20.04) ...
+  254  Selecting previously unselected package mysql-community-server.
+  255  Preparing to unpack .../07-mysql-community-server_8.0.34-1ubuntu20.04_amd64.deb ...
+  256  Unpacking mysql-community-server (8.0.34-1ubuntu20.04) ...
+  257  Selecting previously unselected package mecab-utils.
+  258  Preparing to unpack .../08-mecab-utils_0.996-10build1_amd64.deb ...
+  259  Unpacking mecab-utils (0.996-10build1) ...
+  260  Selecting previously unselected package mecab-ipadic.
+  261  Preparing to unpack .../09-mecab-ipadic_2.7.0-20070801+main-2.1_all.deb ...
+  262  Unpacking mecab-ipadic (2.7.0-20070801+main-2.1) ...
+  263  Selecting previously unselected package mecab-ipadic-utf8.
+  264  Preparing to unpack .../10-mecab-ipadic-utf8_2.7.0-20070801+main-2.1_all.deb ...
+  265  Unpacking mecab-ipadic-utf8 (2.7.0-20070801+main-2.1) ...
+  266  Selecting previously unselected package mysql-server.
+  267  Preparing to unpack .../11-mysql-server_8.0.34-1ubuntu20.04_amd64.deb ...
+  268  Unpacking mysql-server (8.0.34-1ubuntu20.04) ...
+  269  Setting up libmecab2:amd64 (0.996-10build1) ...
+  270  Setting up mysql-common (8.0.34-1ubuntu20.04) ...
+  271  update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+  272  Setting up mysql-community-server-core (8.0.34-1ubuntu20.04) ...
+  273  Setting up mecab-utils (0.996-10build1) ...
+  274  Setting up mysql-community-client-plugins (8.0.34-1ubuntu20.04) ...
+  275  Setting up mecab-ipadic (2.7.0-20070801+main-2.1) ...
+  276  Compiling IPA dictionary for Mecab.  This takes long time...
+  277  reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+  278  emitting double-array: 100% |###########################################|
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+  279  reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+  280  reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+  281  reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+  282  reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+  283  reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+  284  reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+  285  reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+  286  reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+  287  Get:9 https://mirror.yandex.ru/ubuntu focal/main amd64 mecab-ipadic all 2.7.0-20070801+main-2.1 [6,714 kB]wget http://ftp.ru.debian.org/debian/pool/main/c/cowsay/cowsay_3.03+dfsg2-8_all.deb
+  288  wget http://ftp.ru.debian.org/debian/pool/main/c/cowsay/cowsay_3.03+dfsg2-8_all.deb
+  289  user@ubuntu-docker:~$ wget http://ftp.ru.debian.org/debian/pool/main/c/cowsay/cowsay_3.03+dfsg2-8_all.deb
+  290  --2023-09-29 05:09:48--  http://ftp.ru.debian.org/debian/pool/main/c/cowsay/cowsay_3.03+dfsg2-8_all.deb
+  291  Resolving ftp.ru.debian.org (ftp.ru.debian.org)... 85.143.112.112
+  292  Connecting to ftp.ru.debian.org (ftp.ru.debian.org)|85.143.112.112|:80... connected.
+  293  HTTP request sent, awaiting response... 200 OK
+  294  Length: 21372 (21K) [application/octet-stream]
+  295  Saving to: ‘cowsay_3.03+dfsg2-8_all.deb’
+  296  cowsay_3.03+dfsg2-8_all.deb   100%[==============================================>]  20.87K  --.-KB/s    in 0.004s
+  297  2023-09-29 05:09:49 (5.10 MB/s) - ‘cowsay_3.03+dfsg2-8_all.deb’ saved [21372/21372]
+  298  sudo dpkg -i cowsay_3.03+dfsg2-8_all.deb
+  299  cowsay "HELLO"
+  300  sudo dpkg --purge user@ubuntu-docker:~$ sudo dpkg -i cowsay_3.03+dfsg2-8_all.deb
+  301  [sudo] password for user:
+  302  Selecting previously unselected package cowsay.
+  303  (Reading database ... 89940 files and directories currently installed.)
+  304  Preparing to unpack cowsay_3.03+dfsg2-8_all.deb ...
+  305  Unpacking cowsay (3.03+dfsg2-8) ...
+  306  Setting up cowsay (3.03+dfsg2-8) ...
+  307  Processing triggers for man-db (2.9.1-1) ...
+  308  user@ubuntu-docker:~$ cowsay "HELLO"
+  309  < HELLO >
+  310  sudo dpkg --purge cowsay_3.03+dfsg2-8_all.deb
+  311  sudo dpkg --purge cowsay_3.03+dfsg2-8_all
+  312  user@ubuntu-docker:~$ cowsay "HELLO"
+  313  cowsay "HELLO"
+  314  sudo dpkg --purge cowsay
+  315  cowsay "HELLO"
+  316  history
